@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CSI Baton Rouge Chapter</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+
+  :root {
+    --navy: #1a2a4a;
+    --gold: #c9a84c;
+    --gold-light: #e8c96e;
+    --rust: #b84b2b;
+    --cream: #f7f3ec;
+    --white: #ffffff;
+    --gray: #6b7280;
+    --light: #f0ece4;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+    overflow-x: hidden;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: var(--navy);
+    color: rgba(255,255,255,0.7);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    padding: 6px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .topbar a { color: var(--gold); text-decoration: none; }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--white);
+    border-bottom: 3px solid var(--gold);
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo-badge {
+    width: 56px;
+    height: 56px;
+    background: var(--navy);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .logo-badge svg { width: 36px; height: 36px; }
+
+  .logo-text h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+
+  .logo-text span {
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--gray);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  nav { display: flex; gap: 28px; align-items: center; }
+
+  nav a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--navy);
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  nav a:hover { border-bottom-color: var(--gold); color: var(--rust); }
+
+  .btn {
+    display: inline-block;
+    padding: 9px 22px;
+    border-radius: 2px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary { background: var(--gold); color: var(--navy); }
+  .btn-primary:hover { background: var(--gold-light); }
+  .btn-outline { background: transparent; border: 2px solid var(--navy); color: var(--navy); }
+  .btn-outline:hover { background: var(--navy); color: var(--white); }
+  .btn-white { background: var(--white); color: var(--navy); }
+  .btn-white:hover { background: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    color: var(--white);
+    padding: 80px 40px 70px;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 420px; height: 420px;
+    border: 60px solid rgba(201,168,76,0.12);
+    border-radius: 50%;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; left: 300px;
+    width: 200px; height: 200px;
+    border: 30px solid rgba(201,168,76,0.08);
+    border-radius: 50%;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .hero h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 3.6rem;
+    font-weight: 800;
+    line-height: 1.0;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .hero h2 em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .hero p {
+    font-family: 'Lora', serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.8);
+    max-width: 520px;
+    margin-bottom: 32px;
+  }
+
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  /* ── NEXT EVENT CARD ── */
+  .event-card-hero {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 4px;
+    padding: 28px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .event-card-hero .label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .event-card-hero .date-big {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .event-card-hero .event-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .event-card-hero .event-meta {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 18px;
+    line-height: 1.6;
+  }
+
+  .event-card-hero .event-meta strong { color: rgba(255,255,255,0.9); }
+
+  .flyer-placeholder {
+    background: rgba(255,255,255,0.04);
+    border: 1px dashed rgba(201,168,76,0.3);
+    border-radius: 2px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+
+
+  /* ── SECTION STYLES ── */
+  .section { padding: 72px 40px; }
+  .section-alt { background: var(--white); }
+
+  .section-header {
+    margin-bottom: 48px;
+  }
+
+  .section-header .eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 8px;
+  }
+
+  .section-header h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--navy);
+    line-height: 1.05;
+  }
+
+  .section-header p {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: var(--gray);
+    margin-top: 12px;
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  /* ── UPCOMING EVENTS ── */
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .event-item {
+    background: var(--cream);
+    border-left: 4px solid var(--gold);
+    padding: 24px;
+    border-radius: 0 4px 4px 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .event-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(26,42,74,0.1);
+  }
+
+  .event-date-tag {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--gold);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 2px;
+    margin-bottom: 12px;
+  }
+
+  .event-item h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .event-item p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .event-item a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--rust);
+    text-decoration: none;
+  }
+
+  .event-item a:hover { text-decoration: underline; }
+
+  /* ── ABOUT / TWO-COL ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .two-col .img-block {
+    background: var(--navy);
+    border-radius: 4px;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.2);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .two-col .img-block::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 40%;
+    background: linear-gradient(to top, rgba(201,168,76,0.3), transparent);
+  }
+
+  .about-text h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--navy);
+    line-height: 1.05;
+    margin-bottom: 16px;
+  }
+
+  .about-text p {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--gray);
+    margin-bottom: 16px;
+  }
+
+  .about-text .feature-list {
+    list-style: none;
+    margin: 24px 0;
+  }
+
+  .about-text .feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(26,42,74,0.08);
+    font-size: 0.9rem;
+    color: var(--navy);
+  }
+
+  .about-text .feature-list li::before {
+    content: '▸';
+    color: var(--gold);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── MEMBERSHIP CARDS ── */
+  .membership-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .mem-card {
+    background: var(--white);
+    border: 1px solid rgba(26,42,74,0.1);
+    border-radius: 4px;
+    padding: 32px 28px;
+    text-align: center;
+    position: relative;
+    transition: box-shadow 0.2s;
+  }
+
+  .mem-card:hover { box-shadow: 0 12px 32px rgba(26,42,74,0.12); }
+
+  .mem-card.featured {
+    border: 2px solid var(--gold);
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .mem-card .badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--rust);
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 12px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .mem-card .price {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+    margin: 8px 0 4px;
+  }
+
+  .mem-card .price sub {
+    font-size: 1rem;
+    vertical-align: bottom;
+    color: var(--gray);
+  }
+
+  .mem-card.featured .price sub { color: rgba(255,255,255,0.5); }
+
+  .mem-card h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+
+  .mem-card.featured h4 { color: var(--white); }
+
+  .mem-card ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  .mem-card ul li {
+    font-size: 0.85rem;
+    color: var(--gray);
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(26,42,74,0.06);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .mem-card.featured ul li { color: rgba(255,255,255,0.7); border-bottom-color: rgba(255,255,255,0.08); }
+
+  .mem-card ul li::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .mem-note {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--gray);
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  /* ── EMAIL SIGNUP ── */
+  .email-section {
+    background: var(--navy);
+    padding: 64px 40px;
+    text-align: center;
+  }
+
+  .email-section h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  .email-section p {
+    font-family: 'Lora', serif;
+    color: rgba(255,255,255,0.7);
+    font-size: 1rem;
+    margin-bottom: 32px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .email-form {
+    display: flex;
+    max-width: 480px;
+    margin: 0 auto;
+    gap: 0;
+  }
+
+  .email-form input {
+    flex: 1;
+    padding: 13px 18px;
+    border: none;
+    border-radius: 2px 0 0 2px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    background: rgba(255,255,255,0.95);
+    color: var(--navy);
+  }
+
+  .email-form input::placeholder { color: #aaa; }
+
+  .email-form button {
+    padding: 13px 24px;
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    border-radius: 0 2px 2px 0;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+
+  .email-form button:hover { background: var(--gold-light); }
+
+  .email-small {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    margin-top: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── BOARD ── */
+  .board-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .board-card {
+    text-align: center;
+    background: var(--white);
+    border: 1px solid rgba(26,42,74,0.08);
+    border-radius: 4px;
+    padding: 28px 16px 20px;
+  }
+
+  .board-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--navy);
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+
+  .board-card h5 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .board-card .role {
+    font-size: 0.78rem;
+    color: var(--rust);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #111d30;
+    color: rgba(255,255,255,0.6);
+    padding: 48px 40px 28px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  footer h5 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  footer p { font-size: 0.85rem; line-height: 1.7; }
+
+  footer ul { list-style: none; }
+  footer ul li { padding: 4px 0; }
+  footer ul li a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; }
+  footer ul li a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+  }
+
+  .footer-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+
+  .footer-logo span { color: var(--gold); }
+
+  /* ── RESPONSIVE NOTE ── */
+  .wix-note {
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── ANNOUNCEMENT BAR ── */
+  .announce {
+    background: var(--rust);
+    color: var(--white);
+    text-align: center;
+    padding: 10px 40px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+  }
+
+  .announce a { color: var(--gold-light); text-decoration: none; font-weight: 700; }
+
+  /* ── ANIMATION ── */
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(20px); }
+    to { opacity:1; transform: translateY(0); }
+  }
+
+  .hero-content > * {
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-content > *:nth-child(1) { animation-delay: 0.05s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.15s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.25s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.35s; }
+
+
+/* ── EVENTS PAGE STYLES ── */
+
+
+  :root {
+    --navy: #1a2a4a;
+    --gold: #c9a84c;
+    --gold-light: #e8c96e;
+    --rust: #b84b2b;
+    --cream: #f7f3ec;
+    --white: #ffffff;
+    --gray: #6b7280;
+    --light: #f0ece4;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'Barlow', sans-serif; background: var(--cream); color: var(--navy); overflow-x: hidden; }
+  .topbar { background: var(--navy); color: rgba(255,255,255,0.7); font-size: 0.78rem; letter-spacing: 0.05em; padding: 6px 40px; display: flex; justify-content: space-between; align-items: center; }
+  .topbar a { color: var(--gold); text-decoration: none; }
+  header { background: var(--white); border-bottom: 3px solid var(--gold); padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .logo-area { display: flex; align-items: center; gap: 16px; }
+  .logo-badge { width: 56px; height: 56px; background: var(--navy); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .logo-badge svg { width: 36px; height: 36px; }
+  .logo-text h1 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--navy); letter-spacing: 0.04em; line-height: 1.1; text-transform: uppercase; }
+  .logo-text span { font-family: 'Barlow', sans-serif; font-size: 0.75rem; font-weight: 400; color: var(--gray); letter-spacing: 0.08em; text-transform: uppercase; }
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); text-decoration: none; padding-bottom: 2px; border-bottom: 2px solid transparent; transition: border-color 0.2s, color 0.2s; }
+  nav a:hover, nav a.active { border-bottom-color: var(--gold); color: var(--rust); }
+  .btn { display: inline-block; padding: 9px 22px; border-radius: 2px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s; }
+  .btn-primary { background: var(--gold); color: var(--navy); }
+  .btn-primary:hover { background: var(--gold-light); }
+  .btn-outline { background: transparent; border: 2px solid var(--navy); color: var(--navy); }
+  .btn-outline:hover { background: var(--navy); color: var(--white); }
+  .btn-white { background: var(--white); color: var(--navy); }
+  .btn-white:hover { background: var(--gold); }
+  .btn-rust { background: var(--rust); color: var(--white); }
+  .btn-rust:hover { background: #a03d22; }
+  .section { padding: 72px 40px; }
+  .section-alt { background: var(--white); }
+  .section-header { margin-bottom: 48px; }
+  .section-header .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rust); margin-bottom: 8px; }
+  .section-header h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 2.4rem; font-weight: 800; text-transform: uppercase; color: var(--navy); line-height: 1.05; }
+  .section-header p { font-family: 'Lora', serif; font-size: 1rem; color: var(--gray); margin-top: 12px; max-width: 560px; line-height: 1.7; }
+  .page-hero { background: var(--navy); color: var(--white); padding: 56px 40px 48px; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 320px; height: 320px; border: 50px solid rgba(201,168,76,0.1); border-radius: 50%; }
+  .page-hero .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .page-hero h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 3rem; font-weight: 800; text-transform: uppercase; line-height: 1.0; margin-bottom: 12px; }
+  .page-hero h2 em { font-style: normal; color: var(--gold); }
+  .page-hero p { font-family: 'Lora', serif; font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 580px; line-height: 1.7; }
+  footer { background: #111d30; color: rgba(255,255,255,0.6); padding: 48px 40px 28px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  footer h5 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  footer p { font-size: 0.85rem; line-height: 1.7; }
+  footer ul { list-style: none; }
+  footer ul li { padding: 4px 0; }
+  footer ul li a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; }
+  footer ul li a:hover { color: var(--gold); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; }
+  .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--white); letter-spacing: 0.06em; margin-bottom: 12px; }
+  .footer-logo span { color: var(--gold); }
+  .announce { background: var(--rust); color: var(--white); text-align: center; padding: 10px 40px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.06em; }
+  .announce a { color: var(--gold-light); text-decoration: none; font-weight: 700; }
+  @keyframes fadeUp { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
+  .fade-up { animation: fadeUp 0.5s ease both; }
+
+
+  .events-full-grid { display: grid; grid-template-columns: 1fr 340px; gap: 48px; }
+  .event-card {
+    background: var(--white); border-radius: 4px; overflow: hidden;
+    border: 1px solid rgba(26,42,74,0.08); margin-bottom: 24px;
+    display: grid; grid-template-columns: 90px 1fr; transition: box-shadow 0.2s;
+  }
+  .event-card:hover { box-shadow: 0 8px 28px rgba(26,42,74,0.1); }
+  .event-card-date {
+    background: var(--navy); color: var(--gold); display: flex; flex-direction: column;
+    align-items: center; justify-content: center; padding: 20px 12px; text-align: center;
+  }
+  .event-card-date .mo { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .event-card-date .dy { font-family: 'Barlow Condensed', sans-serif; font-size: 2.2rem; font-weight: 800; line-height: 1; }
+  .event-card-date .yr { font-size: 0.7rem; color: rgba(255,255,255,0.4); margin-top: 2px; }
+  .event-card-body { padding: 20px 24px; }
+  .event-card-body h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.2; }
+  .event-card-body .speaker { font-size: 0.82rem; color: var(--rust); font-weight: 600; margin-bottom: 8px; font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.04em; text-transform: uppercase; }
+  .event-card-body p { font-size: 0.88rem; color: var(--gray); line-height: 1.6; margin-bottom: 12px; }
+  .event-card-body .meta { font-size: 0.8rem; color: var(--gray); display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 14px; }
+  .event-card-body .meta span { display: flex; align-items: center; gap: 4px; }
+  .tag { display: inline-block; background: rgba(201,168,76,0.15); color: var(--navy); font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; margin-right: 6px; }
+  .tag.ceu { background: rgba(184,75,43,0.12); color: var(--rust); }
+  .sidebar-card { background: var(--white); border: 1px solid rgba(26,42,74,0.08); border-radius: 4px; padding: 24px; margin-bottom: 20px; }
+  .sidebar-card h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; text-transform: uppercase; color: var(--navy); margin-bottom: 14px; border-bottom: 2px solid var(--gold); padding-bottom: 8px; }
+  .sidebar-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; margin-bottom: 12px; }
+  .past-event { padding: 10px 0; border-bottom: 1px solid rgba(26,42,74,0.07); }
+  .past-event:last-child { border-bottom: none; }
+  .past-event .pt { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--navy); }
+  .past-event .pd { font-size: 0.78rem; color: var(--gray); }
+  .flyer-box { background: var(--cream); border: 1px dashed rgba(26,42,74,0.2); border-radius: 2px; height: 80px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; color: var(--gray); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 10px; }
+
+
+/* ── RESOURCES PAGE STYLES ── */
+
+
+  :root {
+    --navy: #1a2a4a;
+    --gold: #c9a84c;
+    --gold-light: #e8c96e;
+    --rust: #b84b2b;
+    --cream: #f7f3ec;
+    --white: #ffffff;
+    --gray: #6b7280;
+    --light: #f0ece4;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'Barlow', sans-serif; background: var(--cream); color: var(--navy); overflow-x: hidden; }
+  .topbar { background: var(--navy); color: rgba(255,255,255,0.7); font-size: 0.78rem; letter-spacing: 0.05em; padding: 6px 40px; display: flex; justify-content: space-between; align-items: center; }
+  .topbar a { color: var(--gold); text-decoration: none; }
+  header { background: var(--white); border-bottom: 3px solid var(--gold); padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .logo-area { display: flex; align-items: center; gap: 16px; }
+  .logo-badge { width: 56px; height: 56px; background: var(--navy); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .logo-badge svg { width: 36px; height: 36px; }
+  .logo-text h1 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--navy); letter-spacing: 0.04em; line-height: 1.1; text-transform: uppercase; }
+  .logo-text span { font-family: 'Barlow', sans-serif; font-size: 0.75rem; font-weight: 400; color: var(--gray); letter-spacing: 0.08em; text-transform: uppercase; }
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); text-decoration: none; padding-bottom: 2px; border-bottom: 2px solid transparent; transition: border-color 0.2s, color 0.2s; }
+  nav a:hover, nav a.active { border-bottom-color: var(--gold); color: var(--rust); }
+  .btn { display: inline-block; padding: 9px 22px; border-radius: 2px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s; }
+  .btn-primary { background: var(--gold); color: var(--navy); }
+  .btn-primary:hover { background: var(--gold-light); }
+  .btn-outline { background: transparent; border: 2px solid var(--navy); color: var(--navy); }
+  .btn-outline:hover { background: var(--navy); color: var(--white); }
+  .btn-white { background: var(--white); color: var(--navy); }
+  .btn-white:hover { background: var(--gold); }
+  .btn-rust { background: var(--rust); color: var(--white); }
+  .btn-rust:hover { background: #a03d22; }
+  .section { padding: 72px 40px; }
+  .section-alt { background: var(--white); }
+  .section-header { margin-bottom: 48px; }
+  .section-header .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rust); margin-bottom: 8px; }
+  .section-header h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 2.4rem; font-weight: 800; text-transform: uppercase; color: var(--navy); line-height: 1.05; }
+  .section-header p { font-family: 'Lora', serif; font-size: 1rem; color: var(--gray); margin-top: 12px; max-width: 560px; line-height: 1.7; }
+  .page-hero { background: var(--navy); color: var(--white); padding: 56px 40px 48px; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 320px; height: 320px; border: 50px solid rgba(201,168,76,0.1); border-radius: 50%; }
+  .page-hero .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .page-hero h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 3rem; font-weight: 800; text-transform: uppercase; line-height: 1.0; margin-bottom: 12px; }
+  .page-hero h2 em { font-style: normal; color: var(--gold); }
+  .page-hero p { font-family: 'Lora', serif; font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 580px; line-height: 1.7; }
+  footer { background: #111d30; color: rgba(255,255,255,0.6); padding: 48px 40px 28px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  footer h5 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  footer p { font-size: 0.85rem; line-height: 1.7; }
+  footer ul { list-style: none; }
+  footer ul li { padding: 4px 0; }
+  footer ul li a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; }
+  footer ul li a:hover { color: var(--gold); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; }
+  .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--white); letter-spacing: 0.06em; margin-bottom: 12px; }
+  .footer-logo span { color: var(--gold); }
+  .announce { background: var(--rust); color: var(--white); text-align: center; padding: 10px 40px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.06em; }
+  .announce a { color: var(--gold-light); text-decoration: none; font-weight: 700; }
+  @keyframes fadeUp { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
+  .fade-up { animation: fadeUp 0.5s ease both; }
+
+
+  .resources-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .resource-card { background: var(--white); border: 1px solid rgba(26,42,74,0.08); border-radius: 4px; padding: 28px; transition: box-shadow 0.2s, transform 0.2s; }
+  .resource-card:hover { box-shadow: 0 10px 28px rgba(26,42,74,0.1); transform: translateY(-2px); }
+  .resource-card .icon { width: 48px; height: 48px; background: var(--navy); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 16px; }
+  .resource-card h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; font-weight: 700; text-transform: uppercase; color: var(--navy); margin-bottom: 10px; }
+  .resource-card p { font-size: 0.87rem; color: var(--gray); line-height: 1.65; margin-bottom: 16px; }
+  .resource-card a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--rust); text-decoration: none; }
+  .resource-card a:hover { text-decoration: underline; }
+  .cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 32px; }
+  .cert-card { background: var(--navy); color: var(--white); border-radius: 4px; padding: 28px; }
+  .cert-card .abbr { font-family: 'Barlow Condensed', sans-serif; font-size: 2rem; font-weight: 800; color: var(--gold); margin-bottom: 4px; }
+  .cert-card h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+  .cert-card p { font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.65; margin-bottom: 14px; }
+  .cert-card a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; font-weight: 700; color: var(--gold); text-decoration: none; text-transform: uppercase; letter-spacing: 0.06em; }
+  .links-list { list-style: none; }
+  .links-list li { padding: 12px 0; border-bottom: 1px solid rgba(26,42,74,0.08); display: flex; align-items: center; gap: 12px; }
+  .links-list li:last-child { border-bottom: none; }
+  .links-list li .lk { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; color: var(--navy); text-decoration: none; }
+  .links-list li .lk:hover { color: var(--rust); }
+  .links-list li .ld { font-size: 0.82rem; color: var(--gray); }
+  .links-list li .dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+
+
+/* ── ABOUT PAGE STYLES ── */
+
+
+  :root {
+    --navy: #1a2a4a;
+    --gold: #c9a84c;
+    --gold-light: #e8c96e;
+    --rust: #b84b2b;
+    --cream: #f7f3ec;
+    --white: #ffffff;
+    --gray: #6b7280;
+    --light: #f0ece4;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'Barlow', sans-serif; background: var(--cream); color: var(--navy); overflow-x: hidden; }
+  .topbar { background: var(--navy); color: rgba(255,255,255,0.7); font-size: 0.78rem; letter-spacing: 0.05em; padding: 6px 40px; display: flex; justify-content: space-between; align-items: center; }
+  .topbar a { color: var(--gold); text-decoration: none; }
+  header { background: var(--white); border-bottom: 3px solid var(--gold); padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .logo-area { display: flex; align-items: center; gap: 16px; }
+  .logo-badge { width: 56px; height: 56px; background: var(--navy); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .logo-badge svg { width: 36px; height: 36px; }
+  .logo-text h1 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--navy); letter-spacing: 0.04em; line-height: 1.1; text-transform: uppercase; }
+  .logo-text span { font-family: 'Barlow', sans-serif; font-size: 0.75rem; font-weight: 400; color: var(--gray); letter-spacing: 0.08em; text-transform: uppercase; }
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); text-decoration: none; padding-bottom: 2px; border-bottom: 2px solid transparent; transition: border-color 0.2s, color 0.2s; }
+  nav a:hover, nav a.active { border-bottom-color: var(--gold); color: var(--rust); }
+  .btn { display: inline-block; padding: 9px 22px; border-radius: 2px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s; }
+  .btn-primary { background: var(--gold); color: var(--navy); }
+  .btn-primary:hover { background: var(--gold-light); }
+  .btn-outline { background: transparent; border: 2px solid var(--navy); color: var(--navy); }
+  .btn-outline:hover { background: var(--navy); color: var(--white); }
+  .btn-white { background: var(--white); color: var(--navy); }
+  .btn-white:hover { background: var(--gold); }
+  .btn-rust { background: var(--rust); color: var(--white); }
+  .btn-rust:hover { background: #a03d22; }
+  .section { padding: 72px 40px; }
+  .section-alt { background: var(--white); }
+  .section-header { margin-bottom: 48px; }
+  .section-header .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rust); margin-bottom: 8px; }
+  .section-header h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 2.4rem; font-weight: 800; text-transform: uppercase; color: var(--navy); line-height: 1.05; }
+  .section-header p { font-family: 'Lora', serif; font-size: 1rem; color: var(--gray); margin-top: 12px; max-width: 560px; line-height: 1.7; }
+  .page-hero { background: var(--navy); color: var(--white); padding: 56px 40px 48px; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 320px; height: 320px; border: 50px solid rgba(201,168,76,0.1); border-radius: 50%; }
+  .page-hero .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .page-hero h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 3rem; font-weight: 800; text-transform: uppercase; line-height: 1.0; margin-bottom: 12px; }
+  .page-hero h2 em { font-style: normal; color: var(--gold); }
+  .page-hero p { font-family: 'Lora', serif; font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 580px; line-height: 1.7; }
+  footer { background: #111d30; color: rgba(255,255,255,0.6); padding: 48px 40px 28px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  footer h5 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  footer p { font-size: 0.85rem; line-height: 1.7; }
+  footer ul { list-style: none; }
+  footer ul li { padding: 4px 0; }
+  footer ul li a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; }
+  footer ul li a:hover { color: var(--gold); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; }
+  .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--white); letter-spacing: 0.06em; margin-bottom: 12px; }
+  .footer-logo span { color: var(--gold); }
+  .announce { background: var(--rust); color: var(--white); text-align: center; padding: 10px 40px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.06em; }
+  .announce a { color: var(--gold-light); text-decoration: none; font-weight: 700; }
+  @keyframes fadeUp { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
+  .fade-up { animation: fadeUp 0.5s ease both; }
+
+
+  .about-hero-content { max-width: 680px; }
+  .mission-block { background: var(--white); border-radius: 4px; padding: 40px; border-left: 6px solid var(--gold); margin-bottom: 32px; }
+  .mission-block .q { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rust); margin-bottom: 12px; }
+  .mission-block blockquote { font-family: 'Lora', serif; font-size: 1.2rem; font-style: italic; color: var(--navy); line-height: 1.6; }
+  .about-two { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  .about-body p { font-family: 'Lora', serif; font-size: 0.98rem; color: var(--gray); line-height: 1.75; margin-bottom: 16px; }
+  .about-body h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 700; text-transform: uppercase; color: var(--navy); margin: 28px 0 12px; }
+  .about-body ul { list-style: none; margin-bottom: 16px; }
+  .about-body ul li { font-size: 0.9rem; color: var(--navy); padding: 9px 0; border-bottom: 1px solid rgba(26,42,74,0.07); display: flex; gap: 10px; align-items: flex-start; }
+  .about-body ul li::before { content: '▸'; color: var(--gold); flex-shrink: 0; }
+  .board-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .board-card { text-align: center; background: var(--white); border: 1px solid rgba(26,42,74,0.08); border-radius: 4px; padding: 28px 16px 20px; }
+  .board-avatar { width: 72px; height: 72px; border-radius: 50%; background: var(--navy); margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; color: var(--gold); font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 800; }
+  .board-card h5 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .board-card .role { font-size: 0.78rem; color: var(--rust); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; font-family: 'Barlow Condensed', sans-serif; }
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content:''; position:absolute; left:0; top:6px; bottom:6px; width:2px; background: var(--gold); }
+  .tl-item { position: relative; margin-bottom: 24px; }
+  .tl-item::before { content:''; position:absolute; left:-33px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--gold); border:2px solid var(--white); }
+  .tl-item .yr { font-family:'Barlow Condensed',sans-serif; font-size:0.8rem; font-weight:700; color:var(--rust); text-transform:uppercase; letter-spacing:0.08em; }
+  .tl-item .desc { font-size:0.88rem; color:var(--navy); margin-top:2px; }
+
+
+/* ── CONTACT PAGE STYLES ── */
+
+
+  :root {
+    --navy: #1a2a4a;
+    --gold: #c9a84c;
+    --gold-light: #e8c96e;
+    --rust: #b84b2b;
+    --cream: #f7f3ec;
+    --white: #ffffff;
+    --gray: #6b7280;
+    --light: #f0ece4;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'Barlow', sans-serif; background: var(--cream); color: var(--navy); overflow-x: hidden; }
+  .topbar { background: var(--navy); color: rgba(255,255,255,0.7); font-size: 0.78rem; letter-spacing: 0.05em; padding: 6px 40px; display: flex; justify-content: space-between; align-items: center; }
+  .topbar a { color: var(--gold); text-decoration: none; }
+  header { background: var(--white); border-bottom: 3px solid var(--gold); padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .logo-area { display: flex; align-items: center; gap: 16px; }
+  .logo-badge { width: 56px; height: 56px; background: var(--navy); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .logo-badge svg { width: 36px; height: 36px; }
+  .logo-text h1 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--navy); letter-spacing: 0.04em; line-height: 1.1; text-transform: uppercase; }
+  .logo-text span { font-family: 'Barlow', sans-serif; font-size: 0.75rem; font-weight: 400; color: var(--gray); letter-spacing: 0.08em; text-transform: uppercase; }
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); text-decoration: none; padding-bottom: 2px; border-bottom: 2px solid transparent; transition: border-color 0.2s, color 0.2s; }
+  nav a:hover, nav a.active { border-bottom-color: var(--gold); color: var(--rust); }
+  .btn { display: inline-block; padding: 9px 22px; border-radius: 2px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s; }
+  .btn-primary { background: var(--gold); color: var(--navy); }
+  .btn-primary:hover { background: var(--gold-light); }
+  .btn-outline { background: transparent; border: 2px solid var(--navy); color: var(--navy); }
+  .btn-outline:hover { background: var(--navy); color: var(--white); }
+  .btn-white { background: var(--white); color: var(--navy); }
+  .btn-white:hover { background: var(--gold); }
+  .btn-rust { background: var(--rust); color: var(--white); }
+  .btn-rust:hover { background: #a03d22; }
+  .section { padding: 72px 40px; }
+  .section-alt { background: var(--white); }
+  .section-header { margin-bottom: 48px; }
+  .section-header .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rust); margin-bottom: 8px; }
+  .section-header h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 2.4rem; font-weight: 800; text-transform: uppercase; color: var(--navy); line-height: 1.05; }
+  .section-header p { font-family: 'Lora', serif; font-size: 1rem; color: var(--gray); margin-top: 12px; max-width: 560px; line-height: 1.7; }
+  .page-hero { background: var(--navy); color: var(--white); padding: 56px 40px 48px; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 320px; height: 320px; border: 50px solid rgba(201,168,76,0.1); border-radius: 50%; }
+  .page-hero .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .page-hero h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 3rem; font-weight: 800; text-transform: uppercase; line-height: 1.0; margin-bottom: 12px; }
+  .page-hero h2 em { font-style: normal; color: var(--gold); }
+  .page-hero p { font-family: 'Lora', serif; font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 580px; line-height: 1.7; }
+  footer { background: #111d30; color: rgba(255,255,255,0.6); padding: 48px 40px 28px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  footer h5 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  footer p { font-size: 0.85rem; line-height: 1.7; }
+  footer ul { list-style: none; }
+  footer ul li { padding: 4px 0; }
+  footer ul li a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; }
+  footer ul li a:hover { color: var(--gold); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; }
+  .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--white); letter-spacing: 0.06em; margin-bottom: 12px; }
+  .footer-logo span { color: var(--gold); }
+  .announce { background: var(--rust); color: var(--white); text-align: center; padding: 10px 40px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.06em; }
+  .announce a { color: var(--gold-light); text-decoration: none; font-weight: 700; }
+  @keyframes fadeUp { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
+  .fade-up { animation: fadeUp 0.5s ease both; }
+
+
+  .contact-grid { display: grid; grid-template-columns: 1fr 400px; gap: 56px; align-items: start; }
+  .contact-form { background: var(--white); border-radius: 4px; border: 1px solid rgba(26,42,74,0.08); padding: 36px; }
+  .contact-form h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 700; text-transform: uppercase; color: var(--navy); margin-bottom: 24px; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); margin-bottom: 6px; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 11px 14px; border: 1px solid rgba(26,42,74,0.18); border-radius: 2px;
+    font-family: 'Barlow', sans-serif; font-size: 0.92rem; color: var(--navy); background: var(--cream); outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); background: var(--white); }
+  .form-group textarea { height: 110px; resize: vertical; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .contact-sidebar .info-block { background: var(--navy); border-radius: 4px; padding: 28px; color: var(--white); margin-bottom: 20px; }
+  .contact-sidebar .info-block h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .contact-sidebar .info-block p { font-size: 0.87rem; color: rgba(255,255,255,0.75); line-height: 1.65; margin-bottom: 10px; }
+  .contact-sidebar .info-block a { color: var(--gold); text-decoration: none; font-size: 0.87rem; }
+  .info-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .info-item:last-child { border-bottom: none; }
+  .info-item .lbl { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 2px; }
+  .info-item .val { font-size: 0.87rem; color: rgba(255,255,255,0.8); }
+
+
+/* ── JOIN PAGE STYLES ── */
+
+
+  :root {
+    --navy: #1a2a4a;
+    --gold: #c9a84c;
+    --gold-light: #e8c96e;
+    --rust: #b84b2b;
+    --cream: #f7f3ec;
+    --white: #ffffff;
+    --gray: #6b7280;
+    --light: #f0ece4;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'Barlow', sans-serif; background: var(--cream); color: var(--navy); overflow-x: hidden; }
+  .topbar { background: var(--navy); color: rgba(255,255,255,0.7); font-size: 0.78rem; letter-spacing: 0.05em; padding: 6px 40px; display: flex; justify-content: space-between; align-items: center; }
+  .topbar a { color: var(--gold); text-decoration: none; }
+  header { background: var(--white); border-bottom: 3px solid var(--gold); padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .logo-area { display: flex; align-items: center; gap: 16px; }
+  .logo-badge { width: 56px; height: 56px; background: var(--navy); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .logo-badge svg { width: 36px; height: 36px; }
+  .logo-text h1 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--navy); letter-spacing: 0.04em; line-height: 1.1; text-transform: uppercase; }
+  .logo-text span { font-family: 'Barlow', sans-serif; font-size: 0.75rem; font-weight: 400; color: var(--gray); letter-spacing: 0.08em; text-transform: uppercase; }
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); text-decoration: none; padding-bottom: 2px; border-bottom: 2px solid transparent; transition: border-color 0.2s, color 0.2s; }
+  nav a:hover, nav a.active { border-bottom-color: var(--gold); color: var(--rust); }
+  .btn { display: inline-block; padding: 9px 22px; border-radius: 2px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s; }
+  .btn-primary { background: var(--gold); color: var(--navy); }
+  .btn-primary:hover { background: var(--gold-light); }
+  .btn-outline { background: transparent; border: 2px solid var(--navy); color: var(--navy); }
+  .btn-outline:hover { background: var(--navy); color: var(--white); }
+  .btn-white { background: var(--white); color: var(--navy); }
+  .btn-white:hover { background: var(--gold); }
+  .btn-rust { background: var(--rust); color: var(--white); }
+  .btn-rust:hover { background: #a03d22; }
+  .section { padding: 72px 40px; }
+  .section-alt { background: var(--white); }
+  .section-header { margin-bottom: 48px; }
+  .section-header .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rust); margin-bottom: 8px; }
+  .section-header h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 2.4rem; font-weight: 800; text-transform: uppercase; color: var(--navy); line-height: 1.05; }
+  .section-header p { font-family: 'Lora', serif; font-size: 1rem; color: var(--gray); margin-top: 12px; max-width: 560px; line-height: 1.7; }
+  .page-hero { background: var(--navy); color: var(--white); padding: 56px 40px 48px; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 320px; height: 320px; border: 50px solid rgba(201,168,76,0.1); border-radius: 50%; }
+  .page-hero .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .page-hero h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 3rem; font-weight: 800; text-transform: uppercase; line-height: 1.0; margin-bottom: 12px; }
+  .page-hero h2 em { font-style: normal; color: var(--gold); }
+  .page-hero p { font-family: 'Lora', serif; font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 580px; line-height: 1.7; }
+  footer { background: #111d30; color: rgba(255,255,255,0.6); padding: 48px 40px 28px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  footer h5 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  footer p { font-size: 0.85rem; line-height: 1.7; }
+  footer ul { list-style: none; }
+  footer ul li { padding: 4px 0; }
+  footer ul li a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; }
+  footer ul li a:hover { color: var(--gold); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; }
+  .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--white); letter-spacing: 0.06em; margin-bottom: 12px; }
+  .footer-logo span { color: var(--gold); }
+  .announce { background: var(--rust); color: var(--white); text-align: center; padding: 10px 40px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.06em; }
+  .announce a { color: var(--gold-light); text-decoration: none; font-weight: 700; }
+  @keyframes fadeUp { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
+  .fade-up { animation: fadeUp 0.5s ease both; }
+
+
+  .membership-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+  .mem-card { background: var(--white); border: 1px solid rgba(26,42,74,0.1); border-radius: 4px; padding: 32px 28px; text-align: center; position: relative; transition: box-shadow 0.2s; }
+  .mem-card:hover { box-shadow: 0 12px 32px rgba(26,42,74,0.12); }
+  .mem-card.featured { border: 2px solid var(--gold); background: var(--navy); color: var(--white); }
+  .mem-card .badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--rust); color: var(--white); font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 12px; border-radius: 2px; white-space: nowrap; }
+  .mem-card .price { font-family: 'Barlow Condensed', sans-serif; font-size: 2.6rem; font-weight: 800; color: var(--gold); line-height: 1; margin: 8px 0 4px; }
+  .mem-card .price sub { font-size: 1rem; vertical-align: bottom; color: var(--gray); }
+  .mem-card.featured .price sub { color: rgba(255,255,255,0.5); }
+  .mem-card h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.25rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); margin-bottom: 16px; }
+  .mem-card.featured h4 { color: var(--white); }
+  .mem-card ul { list-style: none; text-align: left; margin-bottom: 24px; }
+  .mem-card ul li { font-size: 0.85rem; color: var(--gray); padding: 7px 0; border-bottom: 1px solid rgba(26,42,74,0.06); display: flex; align-items: flex-start; gap: 8px; }
+  .mem-card.featured ul li { color: rgba(255,255,255,0.75); border-bottom-color: rgba(255,255,255,0.08); }
+  .mem-card ul li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+  .faq-item { border-bottom: 1px solid rgba(26,42,74,0.1); padding: 20px 0; }
+  .faq-item h5 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; cursor: pointer; }
+  .faq-item p { font-family: 'Lora', serif; font-size: 0.92rem; color: var(--gray); line-height: 1.7; }
+  .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 32px; }
+  .benefit-item { display: flex; gap: 16px; align-items: flex-start; padding: 20px; background: var(--white); border-radius: 4px; border: 1px solid rgba(26,42,74,0.07); }
+  .benefit-item .ico { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+  .benefit-item h5 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; text-transform: uppercase; color: var(--navy); margin-bottom: 4px; }
+  .benefit-item p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
+
+
+</style>
+</head>
+<body>
+
+<!-- Announcement Bar -->
+<div class="announce">
+  🗓 Next Meeting: April 9 — CSI Information Session + Pizza Night @ Atkinson Hall, Room 142 &nbsp;·&nbsp; 5:30 PM &nbsp;|&nbsp; <a href="#" onclick="showPage('events');return false;">RSVP Here →</a>
+</div>
+
+<!-- Top Bar -->
+<div class="topbar">
+  <span>CSI Baton Rouge Chapter &nbsp;·&nbsp; Part of the Construction Specifications Institute</span>
+  <span>National: <a href="https://www.csiresources.org" target="_blank">csiresources.org</a> &nbsp;·&nbsp; <a href="mailto:info@csibr.org" style="color:var(--gold)">info@csibr.org</a></span>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="logo-area" style="cursor:pointer;" onclick="showPage('home')">
+    <div class="logo-badge"><svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="4" width="28" height="28" rx="2" stroke="#C9A84C" stroke-width="2.5"/>
+        <path d="M9 18 L16 11 L27 22" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="24" cy="13" r="3" fill="#C9A84C"/>
+        <path d="M9 27 L27 27" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+      </svg></div>
+    <div class="logo-text">
+      <h1>CSI Baton Rouge</h1>
+      <span>Construction Specifications Institute · Louisiana Chapter</span>
+    </div>
+  </div>
+  <nav>
+    <a href="#" onclick="showPage('home'); return false;" class="active">Home</a>
+    <a href="#" onclick="showPage('events'); return false;">Events</a>
+    <a href="#" onclick="showPage('resources'); return false;">Resources</a>
+    <a href="#" onclick="showPage('about'); return false;">About</a>
+    <a href="#" onclick="showPage('contact'); return false;">Contact</a>
+    <a href="#" onclick="showPage('join'); return false;" class="btn btn-primary">Join / Renew</a>
+  </nav>
+</header>
+
+<!-- All Pages -->
+<div id="page-home" class="page-section" style="display:block;">
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Baton Rouge, Louisiana &nbsp;·&nbsp; Est. Chapter of CSI National</p>
+    <h2>Where <em>Specs</em><br/>Meet the<br/>Profession.</h2>
+    <p>CSI Baton Rouge brings together architects, engineers, specifiers, contractors, and product representatives to advance construction knowledge and professional standards across Louisiana.</p>
+    <div class="hero-btns">
+      <a href="#" class="btn btn-primary">Upcoming Events</a>
+      <a href="#" class="btn btn-white">Become a Member</a>
+    </div>
+  </div>
+
+  <div class="event-card-hero">
+    <div class="wix-note">📋 This panel will display your current event flyer</div>
+    <p class="label">Featured Event</p>
+    <div class="date-big">APR 9</div>
+    <div class="event-title">CSI Information Session + Pizza Night</div>
+    <p class="event-meta">
+      <strong>5:30 PM</strong><br/>
+      Atkinson Hall, Room 142 — Baton Rouge, LA<br/>
+      <strong>Membership info, certifications &amp; career advancement</strong>
+    </p>
+    <div class="flyer-placeholder">Flyer / Image Here</div>
+    <a href="#" class="btn btn-primary" style="width:100%; text-align:center; display:block;">RSVP for This Event</a>
+  </div>
+</section>
+
+
+
+<!-- Upcoming Events -->
+<section class="section section-alt">
+  <div class="section-header">
+    <p class="eyebrow">What's Coming Up</p>
+    <h3>Upcoming Events<br/>&amp; Presentations</h3>
+    <p>We host talks, lunch-and-learns, and presentations throughout the year — featuring local experts and product reps from across the industry.</p>
+  </div>
+  <div class="events-grid">
+    <div class="event-item">
+      <span class="event-date-tag">Jun 11, 2024</span>
+      <h4>Painting 201: Brush Up on Your Painting</h4>
+      <p>Speaker: Todd Hakenjos, Sherwin Williams Architectural Rep. High-performance coatings for commercial &amp; light industrial projects, including green building cert contributions.</p>
+      <p style="font-size:0.8rem; color:#888; margin-top:-8px;">📍 Drusilla Seafood, 3482 Drusilla Ln &nbsp;·&nbsp; 5:30 PM</p>
+      <a href="#">View Flyer &amp; RSVP →</a>
+    </div>
+    <div class="event-item">
+      <span class="event-date-tag">Date TBD</span>
+      <h4>Educational Discussion on High Wind Design</h4>
+      <p>Speaker: Sid Montecino, Simpson Strong-Tie. A collaborative discussion on high wind uplift design and construction specifications.</p>
+      <p style="font-size:0.8rem; color:#888; margin-top:-8px;">📍 Drusilla Seafood, 3482 Drusilla Ln &nbsp;·&nbsp; 5:30–7:00 PM</p>
+      <a href="#">View Flyer &amp; RSVP →</a>
+    </div>
+    <div class="event-item">
+      <span class="event-date-tag">Apr 9</span>
+      <h4>Information Session + Pizza Night</h4>
+      <p>Learn about CSI membership benefits, certification, sponsorship opportunities, and career advancement. It's not just a cert — it's career growth.</p>
+      <p style="font-size:0.8rem; color:#888; margin-top:-8px;">📍 Atkinson Hall, Room 142 &nbsp;·&nbsp; 5:30 PM</p>
+      <a href="#">View Flyer &amp; RSVP →</a>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="section">
+  <div class="two-col">
+    <div class="img-block">Photo / Chapter Image</div>
+    <div class="about-text">
+      <h3>About CSI<br/>Baton Rouge</h3>
+      <p>We are the local chapter of the Construction Specifications Institute — a national nonprofit that unifies architects, engineers, contractors, and product manufacturers around clear, consistent construction documentation.</p>
+      <p>Our chapter serves the greater Baton Rouge metro area with educational programming, networking events, and access to national CSI resources including certifications and standards.</p>
+      <ul class="feature-list">
+        <li>Monthly programs, talks, and product presentations</li>
+        <li>CEU / learning unit credits for many events</li>
+        <li>Access to CSI national certification prep (CDT, CCS, CCCA)</li>
+        <li>Connection to regional and national CSI network</li>
+        <li>Member directory and professional community</li>
+      </ul>
+      <a href="#" class="btn btn-outline">Learn More About CSI</a>
+    </div>
+  </div>
+</section>
+
+<!-- Membership Section -->
+<section class="section section-alt">
+  <div class="section-header">
+    <p class="eyebrow">Join the Chapter</p>
+    <h3>Membership</h3>
+    <p>Joining CSI Baton Rouge gives you access to local programs, national resources, and a community of peers across the construction industry.</p>
+  </div>
+
+  <div class="membership-grid">
+    <div class="mem-card">
+      <h4>Individual</h4>
+      <div class="price">$TBD<sub>/yr</sub></div>
+      <ul>
+        <li>Access to all local events</li>
+        <li>National CSI membership included</li>
+        <li>Member directory listing</li>
+        <li>Newsletter &amp; announcements</li>
+      </ul>
+      <a href="#" class="btn btn-outline" style="width:100%; text-align:center; display:block;">Join as Individual</a>
+    </div>
+
+    <div class="mem-card featured">
+      <span class="badge">Most Popular</span>
+      <h4>Professional</h4>
+      <div class="price">$TBD<sub>/yr</sub></div>
+      <ul>
+        <li>All Individual benefits</li>
+        <li>Discounted certification exams</li>
+        <li>Learning library access</li>
+        <li>Voting rights at chapter meetings</li>
+        <li>Priority RSVP for events</li>
+      </ul>
+      <a href="#" class="btn btn-primary" style="width:100%; text-align:center; display:block;">Join as Professional</a>
+    </div>
+
+    <div class="mem-card">
+      <h4>Associate / Student</h4>
+      <div class="price">$TBD<sub>/yr</sub></div>
+      <ul>
+        <li>Event access at reduced rate</li>
+        <li>Newsletter access</li>
+        <li>Mentorship opportunities</li>
+        <li>Great for new grads &amp; students</li>
+      </ul>
+      <a href="#" class="btn btn-outline" style="width:100%; text-align:center; display:block;">Join as Associate</a>
+    </div>
+  </div>
+
+  <p class="mem-note">💡 Pricing is TBD — this section can be removed or updated once membership dues are confirmed. Online payment can be added via Wix Payments or PayPal integration.</p>
+</section>
+
+<!-- Email Signup -->
+<section class="email-section">
+  <h3>Stay in the Loop</h3>
+  <p>Sign up for the CSI Baton Rouge newsletter to get event announcements, industry news, and chapter updates delivered to your inbox.</p>
+  <div class="email-form">
+    <input type="email" placeholder="Your email address" />
+    <button type="button">Subscribe</button>
+  </div>
+  <p class="email-small">No spam. Unsubscribe anytime. Your info is never shared.</p>
+</section>
+
+<!-- Board Section -->
+<section class="section section-alt">
+  <div class="section-header">
+    <p class="eyebrow">Chapter Leadership</p>
+    <h3>Our Board</h3>
+    <p>The CSI Baton Rouge chapter is led by volunteer members from across the local construction community.</p>
+  </div>
+  <div class="board-grid">
+    <div class="board-card">
+      <div class="board-avatar">JD</div>
+      <h5>[ Name TBD ]</h5>
+      <div class="role">Chapter President</div>
+    </div>
+    <div class="board-card">
+      <div class="board-avatar">VP</div>
+      <h5>[ Name TBD ]</h5>
+      <div class="role">Vice President</div>
+    </div>
+    <div class="board-card">
+      <div class="board-avatar">SE</div>
+      <h5>[ Name TBD ]</h5>
+      <div class="role">Secretary</div>
+    </div>
+    <div class="board-card">
+      <div class="board-avatar">TR</div>
+      <h5>[ Name TBD ]</h5>
+      <div class="role">Treasurer</div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+</div>
+
+<div id="page-events" class="page-section" style="display:none;">
+<section class="page-hero">
+  <p class="eyebrow">CSI Baton Rouge</p>
+  <h2>Events &amp; <em>Presentations</em></h2>
+  <p>Throughout the year we host technical talks, product presentations, and chapter meetings — open to members and non-members alike.</p>
+</section>
+
+<section class="section section-alt">
+  <div class="events-full-grid">
+    <div>
+      <div class="section-header">
+        <p class="eyebrow">On the Calendar</p>
+        <h3>Upcoming Events</h3>
+      </div>
+
+      <!-- Event 1 -->
+      <div class="event-card">
+        <div class="event-card-date"><div class="mo">Apr</div><div class="dy">9</div><div class="yr">2025</div></div>
+        <div class="event-card-body">
+          <div class="speaker">CSI Chapter Event</div>
+          <h4>Information Session + Pizza Night</h4>
+          <div class="meta">
+            <span>🕠 5:30 PM</span>
+            <span>📍 Atkinson Hall, Room 142</span>
+          </div>
+          <p>Learn about the benefits of CSI membership, sponsorship opportunities, trade magazines, certifications, and career advancement. All are welcome — bring a colleague!</p>
+          <span class="tag">Membership</span>
+          <span class="tag">Networking</span>
+          <br/><br/>
+          <div class="flyer-box">Flyer Image — Pizza Night</div>
+          <br/>
+          <a href="contact.html" class="btn btn-primary">RSVP / Get Info</a>
+        </div>
+      </div>
+
+      <!-- Event 2 -->
+      <div class="event-card">
+        <div class="event-card-date"><div class="mo">Jun</div><div class="dy">11</div><div class="yr">2024</div></div>
+        <div class="event-card-body">
+          <div class="speaker">Todd Hakenjos · Sherwin Williams Architectural Rep</div>
+          <h4>Painting 201: Brush Up on Your Painting</h4>
+          <div class="meta">
+            <span>🕠 5:30 PM</span>
+            <span>📍 Drusilla Seafood, 3482 Drusilla Ln</span>
+          </div>
+          <p>High-performance coatings for commercial and light industrial projects — abrasion, moisture, and harsh-condition solutions, including green building certification contributions.</p>
+          <span class="tag ceu">CEU Credits</span>
+          <span class="tag">Product Presentation</span>
+          <br/><br/>
+          <div class="flyer-box">Flyer Image — Painting 201</div>
+          <br/>
+          <a href="contact.html" class="btn btn-outline">More Info</a>
+        </div>
+      </div>
+
+      <!-- Event 3 -->
+      <div class="event-card">
+        <div class="event-card-date"><div class="mo">TBD</div><div class="dy">—</div><div class="yr">2025</div></div>
+        <div class="event-card-body">
+          <div class="speaker">Sid Montecino · Simpson Strong-Tie</div>
+          <h4>Educational Discussion on High Wind Design</h4>
+          <div class="meta">
+            <span>🕠 5:30–7:00 PM</span>
+            <span>📍 Drusilla Seafood, 3482 Drusilla Ln</span>
+          </div>
+          <p>A collaborative discussion on high wind uplift design — covering uplift forces, connector options, and what specifiers need to know for Louisiana projects.</p>
+          <span class="tag ceu">CEU Credits</span>
+          <span class="tag">Product Presentation</span>
+          <br/><br/>
+          <div class="flyer-box">Flyer Image — High Wind Design</div>
+          <br/>
+          <a href="contact.html" class="btn btn-outline">More Info</a>
+        </div>
+      </div>
+
+      <div id="past" style="margin-top:48px;">
+        <div class="section-header">
+          <p class="eyebrow">Previously</p>
+          <h3>Past Presentations</h3>
+          <p>A record of our chapter's programs. Members can request presentation materials via email.</p>
+        </div>
+        <div style="background:var(--white);border:1px solid rgba(26,42,74,0.08);border-radius:4px;padding:24px;">
+          <div class="past-event"><div class="pt">Painting 201: Brush Up on Your Painting</div><div class="pd">Jun 11, 2024 · Todd Hakenjos, Sherwin Williams</div></div>
+          <div class="past-event"><div class="pt">High Wind Design Discussion</div><div class="pd">2024 · Sid Montecino, Simpson Strong-Tie</div></div>
+          <div class="past-event"><div class="pt">Information Session + Pizza Night</div><div class="pd">Apr 9 · CSI Chapter Membership Event</div></div>
+          <div class="past-event" style="border:none;padding-bottom:0;"><div class="pt" style="color:var(--gray);font-style:italic;font-size:0.85rem;">More past events to be added...</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div>
+      <div class="sidebar-card">
+        <h4>Stay Updated</h4>
+        <p>Sign up for the CSI BR newsletter to get event announcements straight to your inbox.</p>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <input type="email" placeholder="Your email" style="padding:10px 14px;border:1px solid rgba(26,42,74,0.15);border-radius:2px;font-family:'Barlow',sans-serif;font-size:0.9rem;outline:none;"/>
+          <button class="btn btn-primary" style="width:100%;text-align:center;">Subscribe</button>
+        </div>
+        <p style="font-size:0.72rem;color:var(--gray);margin-top:8px;">No spam. Unsubscribe anytime.</p>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>Our Usual Venue</h4>
+        <div style="background:var(--navy);border-radius:4px;padding:16px;color:var(--white);margin-bottom:12px;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.05rem;color:var(--gold);margin-bottom:4px;">Drusilla Seafood</div>
+          <div style="font-size:0.82rem;color:rgba(255,255,255,0.75);line-height:1.6;">3482 Drusilla Ln<br/>Baton Rouge, LA 70809</div>
+        </div>
+        <p>Most of our evening programs are held here. Check individual event details for location confirmation.</p>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>Want to Present?</h4>
+        <p>We welcome product representatives and industry professionals to present to our chapter. Programs are typically 60–90 minutes with CEU opportunities.</p>
+        <a href="contact.html#present" class="btn btn-outline" style="width:100%;text-align:center;display:block;margin-top:8px;">Submit a Proposal</a>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>National Events</h4>
+        <p>CSI National hosts conferences, webinars, and certification study sessions throughout the year.</p>
+        <a href="https://www.csiresources.org/institute/calendar" target="_blank" class="btn btn-outline" style="width:100%;text-align:center;display:block;margin-top:8px;">View National Calendar</a>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div id="page-resources" class="page-section" style="display:none;">
+<section class="page-hero">
+  <p class="eyebrow">CSI Baton Rouge</p>
+  <h2>Member <em>Resources</em></h2>
+  <p>Tools, certifications, standards, and links to help CSI members and construction professionals stay sharp and stay connected.</p>
+</section>
+
+<section class="section section-alt">
+  <div class="section-header">
+    <p class="eyebrow">For Members &amp; Professionals</p>
+    <h3>Helpful Resources</h3>
+  </div>
+  <div class="resources-grid">
+    <div class="resource-card">
+      <div class="icon">📋</div>
+      <h4>MasterFormat &amp; SectionFormat</h4>
+      <p>CSI's industry-standard numbering and organizational systems for construction specifications — the backbone of project documentation.</p>
+      <a href="https://www.csiresources.org/standards/overview" target="_blank">View on CSI National →</a>
+    </div>
+    <div class="resource-card">
+      <div class="icon">📰</div>
+      <h4>The Construction Specifier</h4>
+      <p>CSI's official publication covering specifications, products, and technical topics for design and construction professionals.</p>
+      <a href="https://www.constructionspecifier.com" target="_blank">Read Online →</a>
+    </div>
+    <div class="resource-card">
+      <div class="icon">🎓</div>
+      <h4>CSI Learning Library</h4>
+      <p>On-demand webinars, practice guides, and education resources available to CSI members through the national site.</p>
+      <a href="https://www.csiresources.org/learning/library" target="_blank">Access Library →</a>
+    </div>
+    <div class="resource-card">
+      <div class="icon">🔗</div>
+      <h4>CSI-Connect Community</h4>
+      <p>The online community platform where CSI members connect, share knowledge, and collaborate with peers nationwide.</p>
+      <a href="https://www.csiresources.org/communities/communities-csi-connect556455" target="_blank">Join the Community →</a>
+    </div>
+    <div class="resource-card">
+      <div class="icon">🏆</div>
+      <h4>Career Center</h4>
+      <p>Job postings, career resources, and professional development tools for construction industry professionals.</p>
+      <a href="https://www.csiresources.org/communities/careercenter" target="_blank">Visit Career Center →</a>
+    </div>
+    <div class="resource-card">
+      <div class="icon">📣</div>
+      <h4>CSI Blog &amp; News</h4>
+      <p>Industry insights, member spotlights, certification stories, and updates from the Construction Specifications Institute.</p>
+      <a href="https://www.csiresources.org/communities/communities-blogs" target="_blank">Read the Blog →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="cert">
+  <div class="section-header">
+    <p class="eyebrow">Advance Your Career</p>
+    <h3>CSI Certifications</h3>
+    <p>CSI offers industry-recognized certifications that demonstrate your expertise in construction specifications and documentation. Our chapter members can help connect you with study resources.</p>
+  </div>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="abbr">CDT®</div>
+      <h4>Construction Documents Technologist</h4>
+      <p>The foundational CSI certification — demonstrates knowledge of the construction process, project delivery, and documentation. Great for early-career professionals.</p>
+      <a href="https://www.csiresources.org/new-page1/menu-redirect-cert-overview/menu-redirect-cdt" target="_blank">Learn More →</a>
+    </div>
+    <div class="cert-card">
+      <div class="abbr">CCS®</div>
+      <h4>Certified Construction Specifier</h4>
+      <p>For experienced specifiers — validates your ability to produce project specifications and documents that meet industry standards.</p>
+      <a href="https://www.csiresources.org/new-page1/menu-redirect-cert-overview/menu-redirect-ccs" target="_blank">Learn More →</a>
+    </div>
+    <div class="cert-card">
+      <div class="abbr">CCCA®</div>
+      <h4>Certified Construction Contract Administrator</h4>
+      <p>Demonstrates expertise in managing contracts during construction — ideal for architects and engineers involved in contract administration.</p>
+      <a href="https://www.csiresources.org/new-page1/menu-redirect-cert-overview/menu-redirect-ccca" target="_blank">Learn More →</a>
+    </div>
+    <div class="cert-card">
+      <div class="abbr">CCPR®</div>
+      <h4>Certified Construction Product Representative</h4>
+      <p>Designed for product representatives and manufacturer reps who need to demonstrate their knowledge of construction processes and documentation.</p>
+      <a href="https://www.csiresources.org/new-page1/menu-redirect-cert-overview/menu-redirect-ccpr" target="_blank">Learn More →</a>
+    </div>
+  </div>
+  <div style="background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);border-radius:4px;padding:20px 24px;margin-top:28px;">
+    <p style="font-family:'Lora',serif;font-size:0.95rem;color:var(--navy);"><strong>Interested in certification?</strong> CSI Baton Rouge members can support your study journey. Reach out to the chapter to connect with others who have gone through the process.</p>
+    <a href="contact.html" class="btn btn-primary" style="margin-top:14px;display:inline-block;">Contact the Chapter</a>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="section-header">
+    <p class="eyebrow">Quick Links</p>
+    <h3>External Links &amp; References</h3>
+  </div>
+  <div style="max-width:680px;">
+    <ul class="links-list">
+      <li><div class="dot"></div><div><a class="lk" href="https://www.csiresources.org" target="_blank">CSI National Website</a><div class="ld">csiresources.org — membership, certifications, events, standards</div></div></li>
+      <li><div class="dot"></div><div><a class="lk" href="https://www.constructionspecifier.com" target="_blank">The Construction Specifier Magazine</a><div class="ld">constructionspecifier.com — CSI's official trade publication</div></div></li>
+      <li><div class="dot"></div><div><a class="lk" href="https://www.csiresources.org/communities/components" target="_blank">CSI Chapter &amp; Region Map</a><div class="ld">Find other chapters and regional contacts nationwide</div></div></li>
+      <li><div class="dot"></div><div><a class="lk" href="https://www.csiresources.org/new-page1/exam-registration734" target="_blank">Certification Exam Registration</a><div class="ld">Register for CDT, CCS, CCCA, or CCPR exams</div></div></li>
+      <li><div class="dot"></div><div><a class="lk" href="https://www.facebook.com/CSIbatonrouge" target="_blank">CSI Baton Rouge on Facebook</a><div class="ld">Our current social media presence while the website launches</div></div></li>
+    </ul>
+  </div>
+</section>
+</div>
+
+<div id="page-about" class="page-section" style="display:none;">
+<section class="page-hero">
+  <p class="eyebrow">Who We Are</p>
+  <h2>About <em>CSI</em><br/>Baton Rouge</h2>
+  <p>We are the local chapter of the Construction Specifications Institute — a volunteer-led organization dedicated to advancing construction knowledge and professional standards across South Louisiana.</p>
+</section>
+
+<section class="section section-alt">
+  <div class="mission-block">
+    <div class="q">Our Mission</div>
+    <blockquote>"To bring together the construction community in Baton Rouge — architects, engineers, contractors, and product representatives — to advance knowledge, improve documentation standards, and build professional relationships that make every project better."</blockquote>
+  </div>
+  <div class="about-two">
+    <div class="about-body">
+      <p>The CSI Baton Rouge Chapter is one of nearly 100 local chapters of the Construction Specifications Institute across North America. We serve the greater Baton Rouge metro area, bringing national-level education and resources to the local construction community.</p>
+      <p>Our programs are open to anyone in the construction industry — from seasoned specifiers and architects to product representatives, contractors, and students exploring the field. We meet regularly throughout the year for evening programs, product presentations, and networking events.</p>
+      <h4>Who We Serve</h4>
+      <ul>
+        <li>Architects &amp; Interior Designers</li>
+        <li>Civil &amp; Structural Engineers</li>
+        <li>Construction Specifiers</li>
+        <li>General &amp; Specialty Contractors</li>
+        <li>Product Representatives &amp; Manufacturers</li>
+        <li>Students &amp; Early-Career Professionals</li>
+        <li>Owners, Developers &amp; Facility Managers</li>
+      </ul>
+      <h4>What We Do</h4>
+      <ul>
+        <li>Monthly evening programs with product and technical presentations</li>
+        <li>CEU / learning unit credits at qualifying events</li>
+        <li>Certification exam support and study connections</li>
+        <li>Networking with local construction professionals</li>
+        <li>Access to the national CSI member community</li>
+      </ul>
+    </div>
+    <div>
+      <div style="background:var(--navy);border-radius:4px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.2);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:24px;">Chapter Photo</div>
+      <div style="background:var(--white);border:1px solid rgba(26,42,74,0.08);border-radius:4px;padding:24px;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--rust);margin-bottom:14px;">Chapter Timeline</div>
+        <div class="timeline">
+          <div class="tl-item"><div class="yr">Founded</div><div class="desc">CSI Baton Rouge chapter established as part of the national CSI network</div></div>
+          <div class="tl-item"><div class="yr">Ongoing</div><div class="desc">Annual evening programs with product reps and technical speakers</div></div>
+          <div class="tl-item"><div class="yr">2024</div><div class="desc">Painting 201 with Sherwin Williams; High Wind Design with Simpson Strong-Tie</div></div>
+          <div class="tl-item"><div class="yr">2025</div><div class="desc">Launching new chapter website; expanding membership outreach</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="board">
+  <div class="section-header">
+    <p class="eyebrow">Chapter Leadership</p>
+    <h3>Our Board of Directors</h3>
+    <p>CSI Baton Rouge is led by volunteer members elected by the chapter. Board positions are updated annually at the chapter meeting.</p>
+  </div>
+  <div class="board-grid">
+    <div class="board-card"><div class="board-avatar">—</div><h5>[Name TBD]</h5><div class="role">Chapter President</div></div>
+    <div class="board-card"><div class="board-avatar">—</div><h5>[Name TBD]</h5><div class="role">Vice President</div></div>
+    <div class="board-card"><div class="board-avatar">—</div><h5>[Name TBD]</h5><div class="role">Secretary</div></div>
+    <div class="board-card"><div class="board-avatar">—</div><h5>[Name TBD]</h5><div class="role">Treasurer</div></div>
+  </div>
+  <p style="font-family:'Lora',serif;font-style:italic;font-size:0.85rem;color:var(--gray);text-align:center;margin-top:20px;">Board member names and photos to be added. <a href="contact.html" style="color:var(--rust);">Contact us</a> if you're interested in getting involved.</p>
+</section>
+
+<section style="background:var(--navy);padding:56px 40px;text-align:center;">
+  <p style="font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Part of Something Bigger</p>
+  <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:14px;">CSI is a National Organization</h3>
+  <p style="font-family:'Lora',serif;color:rgba(255,255,255,0.75);font-size:1rem;max-width:560px;margin:0 auto 28px;line-height:1.7;">As a CSI Baton Rouge member, you're connected to a nationwide network of construction professionals, national conferences, certifications, and standards that shape the entire industry.</p>
+  <a href="https://www.csiresources.org" target="_blank" class="btn btn-primary">Visit CSI National</a>
+</section>
+</div>
+
+<div id="page-contact" class="page-section" style="display:none;">
+<section class="page-hero">
+  <p class="eyebrow">Get in Touch</p>
+  <h2><em>Contact</em><br/>CSI Baton Rouge</h2>
+  <p>Questions about membership, upcoming events, or presenting to the chapter? We'd love to hear from you.</p>
+</section>
+
+<section class="section section-alt">
+  <div class="contact-grid">
+    <div>
+      <div class="contact-form">
+        <h4>Send Us a Message</h4>
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane"/></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith"/></div>
+        </div>
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="jane@example.com"/></div>
+        <div class="form-group"><label>Company / Organization</label><input type="text" placeholder="Your firm or company"/></div>
+        <div class="form-group">
+          <label>Reason for Contact</label>
+          <select>
+            <option value="">— Select one —</option>
+            <option>General question</option>
+            <option>Membership inquiry</option>
+            <option>Event RSVP</option>
+            <option>Presenting to the chapter</option>
+            <option>Sponsorship</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Tell us how we can help..."></textarea></div>
+        <button class="btn btn-primary" style="width:100%;text-align:center;">Send Message</button>
+        <p style="font-size:0.75rem;color:var(--gray);margin-top:10px;text-align:center;">We typically respond within 2–3 business days.</p>
+      </div>
+
+      <div id="present" style="margin-top:36px;">
+        <div class="contact-form">
+          <h4>Submit a Presentation Proposal</h4>
+          <p style="font-family:'Lora',serif;font-size:0.9rem;color:var(--gray);margin-bottom:20px;line-height:1.65;">We welcome product representatives, manufacturers, and industry professionals to present to our chapter. Programs are typically 60–90 minutes held at Drusilla Seafood. CEU credit is available for qualifying presentations.</p>
+          <div class="form-group"><label>Your Name &amp; Company</label><input type="text" placeholder="Name — Company Name"/></div>
+          <div class="form-group"><label>Proposed Topic</label><input type="text" placeholder="e.g. Roofing Assemblies for Hot-Humid Climates"/></div>
+          <div class="form-group"><label>Brief Description</label><textarea placeholder="Summarize the topic and who would benefit from attending..."></textarea></div>
+          <div class="form-row">
+            <div class="form-group"><label>Email</label><input type="email" placeholder="you@company.com"/></div>
+            <div class="form-group"><label>Phone (optional)</label><input type="tel" placeholder="(225) 000-0000"/></div>
+          </div>
+          <button class="btn btn-rust" style="width:100%;text-align:center;">Submit Proposal</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-sidebar">
+      <div class="info-block">
+        <h4>Chapter Contact Info</h4>
+        <div class="info-item">
+          <div>
+            <div class="lbl">Email</div>
+            <div class="val"><a href="/cdn-cgi/l/email-protection#640d0a020b2407170d06164a0b1603"><span class="__cf_email__" data-cfemail="c9a0a7afa689aabaa0abbbe7a6bbae">[email&#160;protected]</span></a></div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div>
+            <div class="lbl">Location</div>
+            <div class="val">Baton Rouge, Louisiana</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div>
+            <div class="lbl">Regular Venue</div>
+            <div class="val">Drusilla Seafood<br/>3482 Drusilla Ln, Baton Rouge, LA 70809</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div>
+            <div class="lbl">Meeting Time</div>
+            <div class="val">Evening programs — typically 5:30 PM</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div>
+            <div class="lbl">Social Media</div>
+            <div class="val"><a href="https://www.facebook.com/CSIbatonrouge" target="_blank">Facebook: CSI Baton Rouge</a></div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div>
+            <div class="lbl">National CSI</div>
+            <div class="val"><a href="https://www.csiresources.org" target="_blank">csiresources.org</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--cream);border:1px solid rgba(26,42,74,0.1);border-radius:4px;padding:24px;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--rust);margin-bottom:10px;">Stay Updated</div>
+        <p style="font-size:0.87rem;color:var(--gray);line-height:1.6;margin-bottom:14px;">Subscribe to the chapter newsletter for event announcements and industry news.</p>
+        <input type="email" placeholder="Your email address" style="width:100%;padding:10px 14px;border:1px solid rgba(26,42,74,0.15);border-radius:2px;font-family:'Barlow',sans-serif;font-size:0.9rem;outline:none;margin-bottom:8px;"/>
+        <button class="btn btn-primary" style="width:100%;text-align:center;">Subscribe to Newsletter</button>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div id="page-join" class="page-section" style="display:none;">
+<section class="page-hero">
+  <p class="eyebrow">Get Involved</p>
+  <h2>Join <em>CSI</em><br/>Baton Rouge</h2>
+  <p>Membership connects you to local programs, national resources, industry certifications, and a community of construction professionals across South Louisiana and beyond.</p>
+</section>
+
+<section class="section section-alt">
+  <div class="section-header">
+    <p class="eyebrow">Why Join</p>
+    <h3>Member Benefits</h3>
+    <p>CSI Baton Rouge membership gives you local community and access to the full national CSI network.</p>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-item"><div class="ico">🗓</div><div><h5>Local Events &amp; Programs</h5><p>Attend monthly evening programs featuring technical presentations, product demos, and expert speakers — with CEU credits available.</p></div></div>
+    <div class="benefit-item"><div class="ico">🎓</div><div><h5>Certification Support</h5><p>Connect with chapter members who have earned CSI certifications (CDT, CCS, CCCA, CCPR) and get guidance on your own certification path.</p></div></div>
+    <div class="benefit-item"><div class="ico">🤝</div><div><h5>Professional Network</h5><p>Build relationships with architects, engineers, contractors, product reps, and specifiers across the Baton Rouge construction community.</p></div></div>
+    <div class="benefit-item"><div class="ico">📚</div><div><h5>National Resources</h5><p>Access the CSI Learning Library, Construction Specifier magazine, CSI-Connect community, and national standards like MasterFormat.</p></div></div>
+    <div class="benefit-item"><div class="ico">📣</div><div><h5>Newsletter &amp; Announcements</h5><p>Stay current with chapter news, event previews, and industry updates delivered directly to your inbox.</p></div></div>
+    <div class="benefit-item"><div class="ico">🏆</div><div><h5>Career Advancement</h5><p>CSI membership signals professionalism and commitment to construction excellence — recognized by employers across the industry.</p></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <p class="eyebrow">Membership Options</p>
+    <h3>Choose Your Membership</h3>
+    <p>Pricing is set in coordination with CSI National. Contact the chapter for current dues information.</p>
+  </div>
+  <div class="membership-grid">
+    <div class="mem-card">
+      <h4>Individual</h4>
+      <div class="price">$TBD<sub>/yr</sub></div>
+      <ul>
+        <li>Access to all local chapter events</li>
+        <li>National CSI membership included</li>
+        <li>Member directory listing</li>
+        <li>Newsletter &amp; announcements</li>
+        <li>Access to CSI Learning Library</li>
+      </ul>
+      <a href="contact.html" class="btn btn-outline" style="width:100%;text-align:center;display:block;">Inquire About Joining</a>
+    </div>
+    <div class="mem-card featured">
+      <span class="badge">Most Popular</span>
+      <h4>Professional</h4>
+      <div class="price">$TBD<sub>/yr</sub></div>
+      <ul>
+        <li>All Individual member benefits</li>
+        <li>Discounted certification exam fees</li>
+        <li>Full learning library access</li>
+        <li>Voting rights at chapter meetings</li>
+        <li>Priority RSVP for events</li>
+        <li>Listed in national member directory</li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Inquire About Joining</a>
+    </div>
+    <div class="mem-card">
+      <h4>Associate / Student</h4>
+      <div class="price">$TBD<sub>/yr</sub></div>
+      <ul>
+        <li>Event access at reduced rate</li>
+        <li>Newsletter &amp; announcements</li>
+        <li>Mentorship opportunities</li>
+        <li>Ideal for students &amp; new graduates</li>
+        <li>Path to full membership</li>
+      </ul>
+      <a href="contact.html" class="btn btn-outline" style="width:100%;text-align:center;display:block;">Inquire About Joining</a>
+    </div>
+  </div>
+  <p style="font-family:'Lora',serif;font-style:italic;font-size:0.87rem;color:var(--gray);text-align:center;margin-top:24px;">
+    💡 Membership pricing is determined in coordination with CSI National. Once confirmed, online payment can be enabled through Wix Payments. <a href="contact.html" style="color:var(--rust);">Contact us</a> to learn about current dues.
+  </p>
+</section>
+
+<section class="section section-alt">
+  <div style="max-width: 680px;">
+    <div class="section-header">
+      <p class="eyebrow">Common Questions</p>
+      <h3>Membership FAQ</h3>
+    </div>
+    <div class="faq-item">
+      <h5>Do I have to be a specifier to join CSI?</h5>
+      <p>Not at all. CSI membership is open to anyone involved in the construction industry — architects, engineers, contractors, product representatives, owners, students, and more. If you work in construction, there's a place for you in CSI.</p>
+    </div>
+    <div class="faq-item">
+      <h5>What's included in the national membership?</h5>
+      <p>National CSI membership includes access to the CSI Learning Library, the Construction Specifier magazine, the CSI-Connect online community, discounted certification exam fees, and the national member directory. Local chapter membership adds access to our Baton Rouge programs and network.</p>
+    </div>
+    <div class="faq-item">
+      <h5>How often does the chapter meet?</h5>
+      <p>We typically host several evening programs throughout the year — usually held at Drusilla Seafood on Drusilla Lane in Baton Rouge at 5:30 PM. Dates vary, so subscribing to the newsletter is the best way to stay informed.</p>
+    </div>
+    <div class="faq-item">
+      <h5>Can I attend an event before joining?</h5>
+      <p>Yes! Non-members are welcome to attend chapter events. It's a great way to experience what CSI Baton Rouge is about before committing to membership. Reach out through the contact page and we'll add you to the guest list.</p>
+    </div>
+    <div class="faq-item" style="border-bottom:none;">
+      <h5>How do I renew my membership?</h5>
+      <p>Renewals are handled annually. Members will be notified via the chapter newsletter. You can also reach out directly through the contact page or email us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1970777f76597a6a707b6b37766b7e">[email&#160;protected]</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--navy);padding:56px 40px;text-align:center;">
+  <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Ready to Join?</h3>
+  <p style="font-family:'Lora',serif;color:rgba(255,255,255,0.75);font-size:1rem;max-width:480px;margin:0 auto 28px;line-height:1.7;">Reach out and we'll get you set up. We're happy to answer any questions about what membership looks like for you.</p>
+  <a href="contact.html" class="btn btn-primary" style="margin-right:12px;">Contact the Chapter</a>
+  <a href="https://www.csiresources.org/membership/membership" target="_blank" class="btn btn-white">View National Membership Info</a>
+</section>
+</div>
+
+
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">CSI <span>Baton Rouge</span></div>
+      <p>The Baton Rouge chapter of the Construction Specifications Institute. Serving architects, engineers, contractors, and specifiers across South Louisiana.</p>
+      <br/>
+      <p>📧 <a href="mailto:info@csibr.org" style="color:var(--gold);">info@csibr.org</a></p>
+      <p>📍 Baton Rouge, Louisiana</p>
+    </div>
+    <div>
+      <h5>Chapter</h5>
+      <ul>
+        <li><a href="#" onclick="showPage('about');return false;">About Us</a></li>
+        <li><a href="#" onclick="showPage('about');return false;">Board of Directors</a></li>
+        <li><a href="#" onclick="showPage('contact');return false;">Contact</a></li>
+        <li><a href="#" onclick="showPage('join');return false;">Join / Renew</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Events</h5>
+      <ul>
+        <li><a href="#" onclick="showPage('events');return false;">Upcoming Events</a></li>
+        <li><a href="#" onclick="showPage('events');return false;">Past Presentations</a></li>
+        <li><a href="#" onclick="showPage('contact');return false;">Submit a Presentation</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Resources</h5>
+      <ul>
+        <li><a href="https://www.csiresources.org" target="_blank">CSI National</a></li>
+        <li><a href="#" onclick="showPage('resources');return false;">Certifications (CDT, CCS)</a></li>
+        <li><a href="#" onclick="showPage('resources');return false;">Member Resources</a></li>
+        <li><a href="https://www.facebook.com/CSIbatonrouge" target="_blank">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 CSI Baton Rouge Chapter. All rights reserved.</span>
+    <span>Member of the <a href="https://www.csiresources.org" target="_blank" style="color:var(--gold);">Construction Specifications Institute</a></span>
+  </div>
+</footer>
+
+
+<script>
+function showPage(pageId) {
+  // Hide all pages
+  document.querySelectorAll('.page-section').forEach(p => p.style.display = 'none');
+  // Show target
+  const target = document.getElementById('page-' + pageId);
+  if (target) target.style.display = 'block';
+  // Update nav active state
+  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+  document.querySelectorAll('nav a').forEach(a => {
+    if (a.getAttribute('onclick') && a.getAttribute('onclick').includes("'" + pageId + "'")) {
+      a.classList.add('active');
+    }
+  });
+  // Scroll to top
+  window.scrollTo(0, 0);
+}
+
+// Make internal links within page content work
+document.addEventListener('click', function(e) {
+  const a = e.target.closest('a');
+  if (!a) return;
+  const href = a.getAttribute('href');
+  const onclick = a.getAttribute('onclick');
+  if (onclick) return; // already handled
+  if (!href || href === '#' || href.startsWith('http') || href.startsWith('mailto')) return;
+  // Check if it's a page link
+  const pageMap = {
+    'index.html': 'home',
+    'events.html': 'events',
+    'resources.html': 'resources',
+    'about.html': 'about',
+    'contact.html': 'contact',
+    'join.html': 'join',
+  };
+  // Strip hash
+  const base = href.split('#')[0];
+  if (pageMap[base]) {
+    e.preventDefault();
+    showPage(pageMap[base]);
+  }
+});
+</script>
+
+</body>
+</html>
